@@ -2,64 +2,60 @@ class Usuario{
     private String nome, dataNascimento, email, senha;
     private int telefone, cpf, cep;
     
-    public boolean verificarDados(){
-        
+    public String getnome(){
+        return this.nome;
     }
     
-    private String getnome(){
-        
+    public int gettelefone(){
+        return this.telefone;
     }
     
-    private int gettelefone(){
-        
+    public int getcpf(){
+        return this.cpf;
     }
     
-    private int getcpf(){
-        
+    public int getcep(){
+        return this.cep;   
     }
     
-    private int getcep(){
-        
+    public String getdataNascimento(){
+        return this.dataNascimento;
     }
     
-    private String getdataNascimento(){
-        
+    public String getemail(){
+        return this.email;
     }
     
-    private String getemail(){
-        
+    public String getsenha(){
+        return this.senha;
     }
     
-    private String getsenha(){
-        
+    public void setnome(String nome){
+        this.nome = nome;
     }
     
-    private void setnome(){
-        
+    public void settelefone(int telefone){
+        this.telefone = telefone;
     }
     
-    private void settelefone(){
-        
+    public void setcpf(int cpf){
+        this.cpf = cpf;
     }
     
-    private void setcpf(){
-        
+    public void setcep(int cep){
+        this.cep = cep;
     }
     
-    private void setcep(){
-        
+    public void setdataNascimento(String dataNascimento){
+        this.dataNascimento = dataNascimento;
     }
     
-    private void setdataNascimento(){
-        
+    public void setemail(String email){
+        this.email = email;
     }
     
-    private void setemail(){
-        
-    }
-    
-    private void setsenha(){
-        
+    public void setsenha(String senha){
+        this.senha = senha;
     }
     
 }
@@ -68,95 +64,91 @@ class Organizador{
     private int idOrganizador, orsamento, gastos, telefone, cpf, cep;
     private String nome, dataNascimento,email, senha;
     
-    private int getidOrganizador(){
-        
+    public int getidOrganizador(){
+        return this.idOrganizador;
     }
     
-    private int getorsamento(){
-        
+    public int getorsamento(){
+        return this.orsamento;
     }
     
-    private int getgastos(){
-        
+    public int getgastos(){
+        return this.gastos;
     }
     
-    private int gettelefone(){
-        
+    public int gettelefone(){
+        return this.telefone;
     }
     
-    private int getcpf(){
-        
+    public int getcpf(){
+        return this.cpf;
     }
     
-    private int getcep(){
-        
+    public int getcep(){
+        return this.cep;
     }
     
-    private String getnome(){
-        
+    public String getnome(){
+        return this.nome;
     }
     
-    private String getdataNascimento(){
-        
+    public String getdataNascimento(){
+        return this.dataNascimento;
     }
     
-    private String getemail(){
-        
+    public String getemail(){
+        return this.email;
     }
     
-    private String getsenha(){
-        
+    public String getsenha(){
+        return this.senha;
     }
     
-    private void setidOrganizador(){
-        
+    public void setidOrganizador(int idOrganizador){
+        this.idOrganizador = idOrganizador;
     } 
     
-    private void setorsamento(){
+    public void setorsamento(int orsamento){
+        this.orsamento = orsamento;
+    }
+    
+    public void setgastos(int gastos){
+        this.gastos = gastos;
+    }
+    
+    public void settelefone(int telefone){
+        this.telefone = telefone;
+    }
+    
+    public void setcpf(int cpf){
+        this.cpf = cpf;
+    }
+    
+    public void setcep(int cep){
+        this.cep = cep;
+    }
+    
+    public void setnome(String nome){
+        this.nome = nome;
+    }
+    
+    public void setdataNascimento(String dataNascimento){
+        this.dataNascimento = dataNascimento;
+    }
+    
+    public void setemail(String email){
+        this.email = email;
+    }
+    
+    public void setsenha(String senha){
+        this.senha = senha;
+    }
+    
+    public void cadastrarEvento(){
         
     }
     
-    private void setgastos(){
-        
-    }
-    
-    private void settelefone(){
-        
-    }
-    
-    private void setcpf(){
-        
-    }
-    
-    private void setcep(){
-        
-    }
-    
-    private void setnome(){
-        
-    }
-    
-    private void setdataNascimento(){
-        
-    }
-    
-    private void setemail(){
-        
-    }
-    
-    private void setsenha(){
-        
-    }
-    
-    private void cadastrarEvento(){
-        
-    }
-    
-    private void cancelarEvento(){
-        
-    }
-    
-    public boolean verificarLogin(){
+    public void cancelarEvento(){
         
     }
 }    
@@ -167,84 +159,76 @@ class Participante{
     private String nome, dataNascimento, email, senha;
     public double notaEvento;
     
-    private int getidParticipante(){
-        
+    public int getidParticipante(){
+        return this.idParticipante;
     }
-    
-    private int gettelefone(){
-        
-    }
-    
-    private int getcpf(){
-        
-    }
-    
-    private int getcep(){
-        
-    }
-    
+
     public double getnotaEvento(){
-        
+        return this.notaEvento;
+    }
+
+    public int gettelefone(){
+        return this.telefone;
     }
     
-    private String getnome(){
-        
+    public int getcpf(){
+        return this.cpf;
     }
     
-    private String getdataNascimento(){
-        
+    public int getcep(){
+        return this.cep;
     }
     
-    private String getemail(){
-        
+    public String getnome(){
+        return this.nome;
     }
     
-    private String getsenha(){
-        
+    public String getdataNascimento(){
+        return this.dataNascimento;
     }
     
-    private void setidParticipante(){
-        
+    public String getemail(){
+        return this.email;
+    }
+    
+    public String getsenha(){
+        return this.senha;
+    }
+
+    public void setidParticipante(int idParticipante){
+        this.idParticipante = idParticipante;
     } 
     
-    private void setorsamento(){
-        
+    public void setnome(String nome){
+        this.nome = nome;
     }
     
-    private void setgastos(){
-        
+    public void settelefone(int telefone){
+        this.telefone = telefone;
     }
     
-    private void settelefone(){
-        
+    public void setcpf(int cpf){
+        this.cpf = cpf;
     }
     
-    private void setcpf(){
-        
+    public void setcep(int cep){
+        this.cep = cep;
     }
     
-    private void setcep(){
-        
+    public void setdataNascimento(String dataNascimento){
+        this.dataNascimento = dataNascimento;
     }
     
-    private void setnome(){
-        
+    public void setemail(String email){
+        this.email = email;
     }
     
-    private void setdataNascimento(){
-        
+    public void setsenha(String senha){
+        this.senha = senha;
     }
     
-    private void setemail(){
-        
-    }
-    
-    private void setsenha(){
-        
-    }
-    
-    private void setnotaEvento(){
-        
+    public void setnotaEvento(double notaEvento){
+        this.notaEvento = notaEvento;
     }
     
     
