@@ -238,76 +238,68 @@ class Palestrante{
     private int idPalestrante, telefone, cpf, cep;
     private String nome, dataNascimento, email, senha;
     
-    private int getidPalestrante(){
-        
+    public int getidPalestrante(){
+        return this.idPalestrante;
     }
     
-    private int gettelefone(){
-        
+    public String getnome(){
+        return this.nome;
     }
     
-    private int getcpf(){
-        
+    public int gettelefone(){
+        return this.telefone;
     }
     
-    private int getcep(){
-        
+    public int getcpf(){
+        return this.cpf;
     }
     
-    private String getnome(){
-        
+    public int getcep(){
+        return this.cep;   
     }
     
-    private String getdataNascimento(){
-        
+    public String getdataNascimento(){
+        return this.dataNascimento;
     }
     
-    private String getemail(){
-        
+    public String getemail(){
+        return this.email;
     }
     
-    private String getsenha(){
-        
+    public String getsenha(){
+        return this.senha;
     }
     
-    private void setidPalestrante(){
-        
+    public void setidPalestrante(int idPalestrante){
+        this.idPalestrante = idPalestrante;
     } 
     
-    private void setorsamento(){
-        
+    public void setnome(String nome){
+        this.nome = nome;
     }
     
-    private void setgastos(){
-        
+    public void settelefone(int telefone){
+        this.telefone = telefone;
     }
     
-    private void settelefone(){
-        
+    public void setcpf(int cpf){
+        this.cpf = cpf;
     }
     
-    private void setcpf(){
-        
+    public void setcep(int cep){
+        this.cep = cep;
     }
     
-    private void setcep(){
-        
+    public void setdataNascimento(String dataNascimento){
+        this.dataNascimento = dataNascimento;
     }
     
-    private void setnome(){
-        
+    public void setemail(String email){
+        this.email = email;
     }
     
-    private void setdataNascimento(){
-        
-    }
-    
-    private void setemail(){
-        
-    }
-    
-    private void setsenha(){
-        
+    public void setsenha(String senha){
+        this.senha = senha;
     }
     
     
@@ -315,46 +307,46 @@ class Palestrante{
 
 class Evento{
     String data, nome, hora;
-    int limiteParticipante, valor;
+    int limiteParticipantes, valor;
     
-    private String getdata(){
-        
+    public String getdata(){
+        return this.data;
     }
     
-    private String getnome(){
-        
+    public String getnome(){
+        return this.nome;
     }
     
-    private String gethora(){
-        
+    public String gethora(){
+        return this.hora;
     }
     
-    private int getlimiteParticipantes(){
-        
+    public int getlimiteParticipantes(){
+        return this.limiteParticipantes;
     }
     
-    private int getvalor(){
-        
+    public int getvalor(){
+        return this.valor;
     }
     
-    private void setdata(){
-        
+    public void setdata(String data){
+        this.data = data;
     }
     
-    private void setnome(){
-        
+    public void setnome(String nome){
+        this.nome = nome;
     }
     
-    private void sethora(){
-        
+    public void sethora(String hora){
+        this.hora = hora;
     }
     
-    private void setlimiteParticipantes(){
-        
+    public void setlimiteParticipantes(int limiteParticipantes){
+        this.limiteParticipantes = limiteParticipantes;
     }
     
-    private void setvalor(){
-        
+    public void setvalor(int valor){
+        this.valor = valor;
     }
     
     public void criarAtividade(){
@@ -367,5 +359,58 @@ class Evento{
     
     public void enviarEmail(){
         
+    }
+}
+
+class Atividade{
+    String nome, horario, data, local, descricao;
+    int idEvento;
+
+    public String gethorario(){
+        return this.horario;
+    }
+
+    public String getnome(){
+        return this.nome;
+    }
+
+    public String getdata(){
+        return this.data;
+    }
+
+    public String getlocal(){
+        return this.local;
+    }
+
+    public String getdescricao(){
+        return this.descricao;
+    }
+
+    public int getidEvento(){
+        return this.idEvento;
+    }
+
+    public void sethorario(String horario){
+        this.horario = horario;
+    }
+
+    public void setnome(String nome){
+        this.nome = nome;
+    }
+
+    public void setdata(String data){
+        this.data = data;
+    }
+
+    public void setlocal(String local){
+        this.local = local;
+    }
+
+    public void setdescricao(String descricao){
+        this.descricao = descricao;
+    }
+
+    public void setidEvento(int idEvento){
+        this.idEvento = idEvento;
     }
 }
