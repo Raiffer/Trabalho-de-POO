@@ -6,7 +6,7 @@ class Usuario{
         
     }
     
-    private String getnome(){
+    public String getnome(){
         
     }
     
