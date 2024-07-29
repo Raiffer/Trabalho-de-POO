@@ -32,5 +32,4 @@ public class Organizador extends Usuario {
 	public void setGastos(int gastos) {
 		this.gastos = gastos;
 	}
-
 }
