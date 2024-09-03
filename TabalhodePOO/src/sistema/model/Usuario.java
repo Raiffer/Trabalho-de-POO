@@ -1,8 +1,10 @@
 package sistema.model;
+import java.util.UUID;
 
-public abstract class Usuario {
+public class Usuario {
 	private String email, senha, cep, cpf, dataNascimento, nome;
 	private int telefone;
+	private UUID id;
 	
 	public Usuario(String email, String senha, String cep, String cpf, String dataNascimento, String nome, int telefone) {
 		this.email = email;
@@ -12,6 +14,11 @@ public abstract class Usuario {
 		this.dataNascimento = dataNascimento;
 		this.nome = nome;
 		this.telefone = telefone;
+		this.id = UUID.randomUUID();
+	}
+	
+	public Usuario() {
+		
 	}
 
 	public String getEmail() {
@@ -69,6 +76,8 @@ public abstract class Usuario {
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
-	
-	
+
+	public UUID getId() {
+		return id;
+	}	
 }

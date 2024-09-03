@@ -1,18 +1,20 @@
 package sistema.model;
 
+import java.util.UUID;
+
 public class Avaliacao {
 	private int nota;
-	private Participante participante;
+	private Usuario participante;
 	private String coment;
 	private Evento event;
-	private int id;
+	private UUID id;
 	
-	public Avaliacao(int nota, Participante participante, String coment, Evento event) {
+	public Avaliacao(int nota, Usuario participante, String coment, Evento event) {
 		this.nota = nota;
 		this.participante = participante;
 		this.coment = coment;
 		this.event = event;
-		this.id = participante.getId();
+		this.id = UUID.randomUUID();
 	}
 
 	public int getNota() {
@@ -23,12 +25,8 @@ public class Avaliacao {
 		this.nota = nota;
 	}
 
-	public Participante getParticipante() {
+	public Usuario getParticipante() {
 		return participante;
-	}
-
-	public void setParticipante(Participante participante) {
-		this.participante = participante;
 	}
 
 	public String getComent() {
@@ -43,7 +41,7 @@ public class Avaliacao {
 		return event;
 	}
 
-	public int getId() {
+	public UUID getId() {
 		return id;
 	}
 	
