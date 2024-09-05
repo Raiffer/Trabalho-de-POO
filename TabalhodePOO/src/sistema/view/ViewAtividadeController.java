@@ -1,6 +1,6 @@
 package sistema.view;
 
-import sistema.model.*;
+import sistema.model.Model;
 
 public class ViewAtividadeController {
 	private Model model;
@@ -12,8 +12,11 @@ public class ViewAtividadeController {
 		
 	}
 	
-	public void event(int caso) {
-		// Analisa os eventos do View Controller
+	public void interacao(int caso) {
+		switch (caso){
+			case 1:
+				view.goEvento(view.getEmail());
+		}
 	}
 
 }

@@ -19,14 +19,27 @@ public class ViewEventoController {
 			} else {
 				view.mensagem("Apenas Organizadores podem criar Atividades");
 			}
+			
 		case 2:
 			if (model.getUsuario(view.getEmail()) == model.getOrganizador(view.getEmail(), view.getEvento())) {
 				view.goEditarEvento(View.getEmail);
 			} else {
 				view.mensagem("Apenas Organizadores podem editar o evento");
 			}
+
 		case 3:
-			//Classe imcompleta
+			model.entrarEvento(view.getEmail());
+
+		case 4:
+			model.removerAtividade(view.getEvento());
+			view.goMenu(view.getEmail());
+			
+		case 5:
+			view.goMenu(view.getEmail());
+			
+		case 6:
+			view.goAtividade(view.getEmail());
+			
 		}
 	}
 }

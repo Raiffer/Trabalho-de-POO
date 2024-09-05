@@ -1,7 +1,6 @@
 package sistema.view;
 
-import sistema.model.*;
-import java.util.UUID;
+import sistema.model.Model;
 
 public class ViewCadastroController {
     private ViewCadastro view;
@@ -27,7 +26,7 @@ public class ViewCadastroController {
                         //view.getDataNascimento(), view.getNome(), view.getTelefone());
 
                 //Necessario fazer o metodo irLogin()
-                // IrLogin é o metodo que instancia o objeto ViewLogin e inicia o metodo initViewLogin.
+                // goLogin é o metodo que instancia o objeto ViewLogin e inicia o metodo initViewLogin.
             case 2:
                 view.goLogin();
         }
