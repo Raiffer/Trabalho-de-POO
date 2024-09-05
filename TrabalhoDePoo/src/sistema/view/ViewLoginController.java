@@ -2,7 +2,6 @@ package sistema.view;
 
 import sistema.model.*;
 import java.util.Observer;
-import java.UUID.*;
 
 public class ViewLoginController {
 
@@ -23,8 +22,8 @@ public class ViewLoginController {
                 //Caso nao haja um Usuario com esse login e senha retorne False.
                 if(Flag){
                     view.mensagem("Usuario verificado");
-                    UUID id = model.getID(view.getLogin());
-                    view.irMenu(id);
+                    String email = view.getLogin();
+                    view.goMenu(id);
                     //Necessario fazer os metodo mensagem() e irMenu() --> Rian
                     //Metodo mensagem() digita algo na tela, e o metodo irMenu() instancia um objeto ViewMenu e chama initViewMenu().
                 }else{
