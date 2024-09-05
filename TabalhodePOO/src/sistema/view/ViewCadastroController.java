@@ -4,19 +4,33 @@ import sistema.model.*;
 import java.util.UUID;
 
 public class ViewCadastroController {
-    public boolean VerificarCpf(){
-        //Pedir para o model verificar se o cpf é valido
-        //Verificar se ja tem alguém com aquele cpf em questão;
-        return false;
+    private ViewCadastro view;
+    private Model model;
+
+    public void initViewCadastroController(Model model, ViewCadastro view) {
+        this.view = view;
+        this.model = model;
     }
 
-    public boolean VerificarCadastro(String senha, String email, String cpf, String cep){
-        //Verificar se a senha ta correta,
-        // e se o email esta coincidindo com o dado
-        // e verificar se o cpf existe
-        // ver se o cep ta no formato correto
-        return false;
+    public void interacao(int caso){
+        switch(caso){
+            //necessario criar uma verificacao -->Rian ou Arthur ou Bernardo
+            case 1:
+                if(model.criarUsuario(view.getEmail(), view.getSenha(), view.getCep(), view.getCpf(),view.getDataNascimento(), view.getNome(), view.getTelefone())){
+                    view.mensagem("cadastro feito");
+                    view.goLogin();
+                }else{
+                    view.mensagem("credenciais invalidas");
+                    view.cadastrar();
+                }
+                //model.criarUsuario(view.getEmail(), view.getSenha(), view.getCep(), view.getCpf(),
+                        //view.getDataNascimento(), view.getNome(), view.getTelefone());
 
+                //Necessario fazer o metodo irLogin()
+                // IrLogin é o metodo que instancia o objeto ViewLogin e inicia o metodo initViewLogin.
+            case 2:
+                view.goLogin();
+        }
     }
 
 }

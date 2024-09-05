@@ -5,17 +5,16 @@ import java.util.UUID;
 //Alguns atributos nao tem setters pois nao podem ser mudados.
 
 public class Atividade {
-	private String nome, local;
+	private String nome;
 	private String data, horaInicio, horaFim;
 	private HashMap<Integer, Object> listPart;
 	private Usuario palestrante;
 	private Evento evento;
 	private UUID id;
 
-	public Atividade(String nome, String local, String data, String horaInicio, String horaFim, Evento evento) {
+	public Atividade(String nome, String data, String horaInicio, String horaFim, Evento evento) {
 		this.id = UUID.randomUUID();
 		this.nome = nome;
-		this.local = local;
 		this.data = data;
 		this.horaInicio = horaInicio;
 		this.horaFim = horaFim;
@@ -28,14 +27,6 @@ public class Atividade {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getLocal() {
-		return local;
-	}
-
-	public void setLocal(String local) {
-		this.local = local;
 	}
 
 	public String getData() {

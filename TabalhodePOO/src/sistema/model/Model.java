@@ -23,14 +23,14 @@ public class Model {
 		return false;
 	}
 	
-	public boolean criarEvento(String nome, String local, String dataInicio, String dataFim, int numPart, Usuario organizador) {
-		Evento evento = new Evento( nome,  local,  dataInicio,  dataFim,  numPart,  organizador);
+	public boolean criarEvento(String nome, String local, String dataInicio, String dataFim,  Usuario organizador) {
+		Evento evento = new Evento( nome,  local,  dataInicio,  dataFim,  organizador);
 		eventos.put(evento.getId(), evento);
 			return true;
 	}
 	
-	public boolean criarAtividade(String nome, String local, String data, String horaInicio, String horaFim, Evento evento) {
-		Atividade atividade = new Atividade( nome,  local,  data,  horaInicio,  horaFim,  evento);
+	public boolean criarAtividade(String nome, String data, String horaInicio, String horaFim, Evento evento) {
+		Atividade atividade = new Atividade( nome,  data,  horaInicio,  horaFim,  evento);
 		atividades.put(atividade.getId(), atividade);
 			return true;
 	}
