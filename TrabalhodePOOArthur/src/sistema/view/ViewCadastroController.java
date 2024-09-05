@@ -26,9 +26,9 @@ public class ViewCadastroController {
                         //view.getDataNascimento(), view.getNome(), view.getTelefone());
 
                 //Necessario fazer o metodo irLogin()
-                // IrLogin é o metodo que instancia o objeto ViewLogin e inicia o metodo initViewLogin.
+                // goLogin é o metodo que instancia o objeto ViewLogin e inicia o metodo initViewLogin.
             case 2:
-                view.irLogin();
+                view.goLogin();
         }
     }
 
