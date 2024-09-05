@@ -14,7 +14,6 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 		this.nome = nome;
 		this.telefone = telefone;
-		this.id = UUID.randomUUID();
 	}
 	
 	public Usuario() {
@@ -77,7 +76,4 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-	public UUID getId() {
-		return id;
-	}	
 }

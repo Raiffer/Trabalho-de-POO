@@ -8,11 +8,10 @@ import java.util.UUID;
 public class Evento {
 	private String nome, local, dataInicio, dataFim;
 	private double notaMedia;
-	private Map<Integer, Usuario> participantes = new HashMap<>();
-	private Map<Integer, Atividade> atividades = new HashMap<>();
-	private Map<Integer, Avaliacao> avaliacoes = new HashMap<>();
+	private Map<String, Usuario> participantes = new HashMap<>();
+	private Map<String, Atividade> atividades = new HashMap<>();
+	private Map<String, Avaliacao> avaliacoes = new HashMap<>();
 	private Usuario organizador;
-	private UUID id;
 
 	public Evento(String nome, String local, String dataInicio, String dataFim, Usuario organizador) {
 		//mudar o parametro Usuario usuario para Chave Email e procurar qual usuario está nessa chave e settar em organizador. 
@@ -21,7 +20,6 @@ public class Evento {
 		this.dataInicio = dataInicio;
 		this.dataFim = dataFim;
 		this.organizador = organizador;
-		this.id = UUID.randomUUID();
 		this.notaMedia = 0;
 	}
 
@@ -29,7 +27,7 @@ public class Evento {
 		return nome;
 	}
 
-	public void setNome(String nome) {
+	public void setnomeEvento(String nome) {
 		this.nome = nome;
 	}
 
@@ -50,9 +48,6 @@ public class Evento {
 		this.calcularMedia();
 	}
 
-	public UUID getId() {
-		return id;
-	}
 
 	public Usuario getOrganizador() {
 		return organizador;
@@ -80,4 +75,7 @@ public class Evento {
 		this.dataFim = dataFim;
 	}
 
+	public void guardarUsuario(Usuario usuario){
+		participantes.put(usuario.getEmail(),usuario);
+	}
 }
