@@ -7,13 +7,11 @@ import java.util.UUID;
 public class Atividade {
 	private String nome;
 	private String data, horaInicio, horaFim;
-	private HashMap<Integer, Object> listPart;
+	private HashMap<String, Object> listPart;
 	private Usuario palestrante;
 	private Evento evento;
-	private UUID id;
 
 	public Atividade(String nome, String data, String horaInicio, String horaFim, Evento evento) {
-		this.id = UUID.randomUUID();
 		this.nome = nome;
 		this.data = data;
 		this.horaInicio = horaInicio;
@@ -21,35 +19,35 @@ public class Atividade {
 		this.evento = evento;
 	}
 
-	public String getNome() {
+	public String getNomeAtv() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
+	public void setNomeAtv(String nome) {
 		this.nome = nome;
 	}
 
-	public String getData() {
+	public String getDataAtv() {
 		return data;
 	}
 
-	public void setData(String data) {
+	public void setDataAtv(String data) {
 		this.data = data;
 	}
 
-	public String getHoraInicio() {
+	public String getHoraInicioAtv() {
 		return horaInicio;
 	}
 
-	public void setHoraInicio(String horaInicio) {
+	public void setHoraInicioAtv(String horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public String getHoraFim() {
+	public String getHoraFimAtv() {
 		return horaFim;
 	}
 
-	public void setHoraFim(String horaFim) {
+	public void setHoraFimAtv(String horaFim) {
 		this.horaFim = horaFim;
 	}
 
@@ -61,16 +59,13 @@ public class Atividade {
 		this.palestrante = palestrante;
 	}
 
-	public Evento getEvento() {
+	public Evento getEventoAtv() {
 		return evento;
 	}
 
-	public void setEvento(Evento evento) {
+	public void setEventoAtv(Evento evento) {
 		this.evento = evento;
 	}
 
-	public UUID getId() {
-		return id;
-	}
 
 }
