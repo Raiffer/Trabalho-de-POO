@@ -1,10 +1,8 @@
 package sistema.model;
-import java.util.UUID;
 
 public class Usuario {
 	private String email, senha, cep, cpf, dataNascimento, nome;
 	private int telefone;
-	private UUID id;
 	
 	public Usuario(String email, String senha, String cep, String cpf, String dataNascimento, String nome, int telefone) {
 		this.email = email;

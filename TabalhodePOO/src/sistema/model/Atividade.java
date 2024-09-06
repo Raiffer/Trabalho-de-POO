@@ -1,7 +1,6 @@
 package sistema.model;
 
 import java.util.HashMap;
-import java.util.UUID;
 //Alguns atributos nao tem setters pois nao podem ser mudados.
 
 public class Atividade {
@@ -65,6 +64,10 @@ public class Atividade {
 
 	public void setEventoAtv(Evento evento) {
 		this.evento = evento;
+	}
+	
+	public void guardarPart(Usuario usuario) {
+		listPart.put(usuario.getNome(), usuario);
 	}
 
 

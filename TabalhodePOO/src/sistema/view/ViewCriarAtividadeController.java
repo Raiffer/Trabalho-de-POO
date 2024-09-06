@@ -1,6 +1,5 @@
 package sistema.view;
 
-import sistema.model.Evento;
 import sistema.model.Model;
 
 public class ViewCriarAtividadeController {
@@ -16,9 +15,10 @@ public class ViewCriarAtividadeController {
     public void interacao(int caso){
         switch (caso){
             case 1://criar nova atividade - danilo
-                model.criarAtividade(view.getNome(), view.getLocal(), view.getData(),  view.getHoraInicio(), view.getHoraFim, model.getEvento(view.getEvento()));
+                model.criarAtividade(view.getNome(), view.getData(),  view.getHoraInicio(), view.getHoraFim(), view.getEvento());
+                view.goAtividade();
             case 2: //voltar para tela do evento - danilo
-                view.goEvento(view.getEmail());
+                view.goEvento();
         }
     }
 }

@@ -4,10 +4,10 @@ import sistema.model.*;
 
 public class ViewMenuController {
 	private ViewMenu view;
-	private Model model;
+	//private Model model;
 	
 	public void initViewMenuController(Model model, ViewMenu view) {
-		this.model = model;
+		//this.model = model;
 		this.view = view;
 	}
 	
@@ -20,7 +20,6 @@ public class ViewMenuController {
 			case 3:
 				//Discutivel, nao sei como funcionaria o metodo pesquisar.
 			case 4:
-				model.entrarEvento(view.getEvento(), view.getEmail());
 				view.goEvento(view.getEmail());
 		}
 	}

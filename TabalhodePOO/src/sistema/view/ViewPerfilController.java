@@ -3,23 +3,19 @@ package sistema.view;
 import sistema.model.Model;
 
 public class ViewPerfilController {
-    Model model;
-    ViewPerfil view;
+    //private Model model;
+    private ViewPerfil view;
 
-    public ViewPerfilController(Model model, ViewPerfil view) {
-        this.model = model;
+    public void initViewPerfilController(Model model, ViewPerfil view) {
+        //this.model = model;
         this.view = view;
     }
 
     public void interacao(int caso){
         switch (caso){
             case 1: view.goLogin();
-            case 2: view.goMenu(view.getEmail());
-            case 3: model.setEmail(view.getEmail());
-            case 4: model.setSenha(view.getEmail(),view.getSenha());
-            case 5: model.setNome(view.getEmail(), view.getNome());
-            case 6: model.setTelefone(view.getEmail(),view.getTelefone());
-            case 7:model.setCep(view.getEmail(), view.getCep());
+            case 2: view.goEditarPerfil();
+            case 3: view.goMenu();
             
 
         }

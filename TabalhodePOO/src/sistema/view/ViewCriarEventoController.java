@@ -14,15 +14,16 @@ public class ViewCriarEventoController {
     public void interacao(int caso) {
         switch (caso) {
             case 1:
-                if (model.criarEvento(view.getNome(), view.getLocal(), view.getDataInicio, view.getDataFim(),view.GetEmail())) {
+                if (model.verificarEvento(view.getNome(), view.getLocal(), view.getDataInicio(), view.getDataFim())) {
+                    model.criarEvento(view.getNome(), view.getLocal(), view.getDataInicio(), view.getDataFim(),view.getEmail());
                     view.mensagem("Deu Certo");
-                    view.goEvento(view.getEmail());
+                    view.goEvento();
                 }else {
                     view.mensagem("Deu Nao");
                     view.goMenu();
                 }
             case 2:
-                view.goMenu(view.getEmail());
+                view.goMenu();
 
         }
     }

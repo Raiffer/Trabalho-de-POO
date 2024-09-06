@@ -21,7 +21,7 @@ public class ViewNovaSenhaController {
                     view.goLogin();
                 } else {
                     view.mensagem("Nao deu");
-                    view.goLogin();
+                    view.novaSenha();
                 }
             case 2:
                 view.goLogin();
