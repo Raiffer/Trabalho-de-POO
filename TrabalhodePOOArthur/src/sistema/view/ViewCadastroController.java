@@ -25,7 +25,7 @@ public class ViewCadastroController {
                 //model.criarUsuario(view.getEmail(), view.getSenha(), view.getCep(), view.getCpf(),
                         //view.getDataNascimento(), view.getNome(), view.getTelefone());
 
-                //Necessario fazer o metodo irLogin()
+                //Necessario fazer o metodo goLogin()
                 // goLogin é o metodo que instancia o objeto ViewLogin e inicia o metodo initViewLogin.
             case 2:
                 view.goLogin();
