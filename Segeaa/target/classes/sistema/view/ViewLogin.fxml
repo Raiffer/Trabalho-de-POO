@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistema.view.ViewLoginController">
+  <children>
+    <AnchorPane fx:id="painel" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+        <Label alignment="CENTER" layoutX="213.0" layoutY="154.0" style="&#10;" text="Email" textAlignment="CENTER" wrapText="false">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+            <TextField fx:id="caixatxtEmail" layoutX="211.0" layoutY="181.0" prefHeight="25.0" prefWidth="218.0" />
+            <Label alignment="CENTER" layoutX="213.0" layoutY="206.0" prefHeight="27.0" prefWidth="56.0" style="&#10;" text="Senha" textAlignment="CENTER" wrapText="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="caixatxtSenha" layoutX="211.0" layoutY="233.0" prefHeight="25.0" prefWidth="218.0" />
+            <Button fx:id="botaoLogin" layoutX="211.0" layoutY="299.0" mnemonicParsing="false" onAction="#mostrar" prefHeight="36.0" prefWidth="218.0" text="Login" />
+            <Text fx:id="txtCadastro" fill="#20d7eb" layoutX="209.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Não tem uma conta?" wrappingWidth="121.0" />
+            <Text fx:id="txtRedefinirSenha" fill="#20d7eb" layoutX="210.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Esqueceu a senha? Redefina-a agora" wrappingWidth="206.13671875" />
+            <Label layoutX="209.0" layoutY="62.0" prefHeight="53.0" prefWidth="121.0" text="SAGEA" textFill="#1fcae4">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="273.0" layoutY="115.0" prefHeight="39.0" prefWidth="81.0" text="Login">
+               <font>
+                  <Font name="System Bold Italic" size="27.0" />
+               </font>
+            </Label>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
