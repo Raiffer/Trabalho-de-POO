@@ -7,14 +7,12 @@ public class Avaliacao {
 	private Usuario participante;
 	private String coment;
 	private Evento event;
-	private UUID id;
 	
 	public Avaliacao(int nota, Usuario participante, String coment, Evento event) {
 		this.nota = nota;
 		this.participante = participante;
-		this.coment = coment;
-		this.event = event;
-		this.id = UUID.randomUUID();
+		this.coment = coment;this.event = event;
+
 	}
 
 	public int getNota() {
@@ -33,6 +31,7 @@ public class Avaliacao {
 		return coment;
 	}
 
+
 	public void setComent(String coment) {
 		this.coment = coment;
 	}
@@ -41,8 +40,6 @@ public class Avaliacao {
 		return event;
 	}
 
-	public UUID getId() {
-		return id;
-	}
+
 	
 }
