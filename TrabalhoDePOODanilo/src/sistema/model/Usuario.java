@@ -1,11 +1,10 @@
 package sistema.model;
 import java.util.UUID;
-
 public class Usuario {
 	private String email, senha, cep, cpf, dataNascimento, nome;
 	private int telefone;
-	private UUID id;
-	
+	private TipoUsuario cargo;
+
 	public Usuario(String email, String senha, String cep, String cpf, String dataNascimento, String nome, int telefone) {
 		this.email = email;
 		this.senha = senha;
@@ -74,6 +73,10 @@ public class Usuario {
 	
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
+	}
+
+	public void setCargo(TipoUsuario cargo) {
+		this.cargo = cargo;
 	}
 
 }

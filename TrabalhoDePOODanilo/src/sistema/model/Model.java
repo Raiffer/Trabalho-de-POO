@@ -17,7 +17,7 @@ public class Model {
 	public boolean criarUsuario(String email, String senha, String cep, String cpf, String dataNascimento, String nome, int telefone) {
 		if (verificarCPF(cpf)) {
 			Usuario user = new Usuario( email,  senha,  cep,  cpf,  dataNascimento,  nome, telefone);
-			usuarios.put(user.getId() , user);
+			usuarios.put(user.getEmail() , user);
 			return true;
 		}
 		return false;
@@ -31,7 +31,7 @@ public class Model {
 	
 	public boolean criarAtividade(String nome, String data, String horaInicio, String horaFim, Evento evento) {
 		Atividade atividade = new Atividade( nome,  data,  horaInicio,  horaFim,  evento);
-		atividades.put(atividade.getNome(), atividade);
+		atividades.put(atividade.getNomeAtv(), atividade);
 			return true;
 	}
 
@@ -96,6 +96,9 @@ public void recuperarSenha(String email) {
 	}
 	public void entrarEvento(Usuario usuario, String evento){
 		eventos.get(evento).guardarUsuario(usuario);
+	}
+	public void setTipoUsuario(String email, TipoUsuario cargo) {
+		usuarios.get(email).setCargo(cargo);
 	}
 
 }
