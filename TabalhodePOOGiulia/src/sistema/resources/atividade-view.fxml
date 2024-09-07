@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistema.view.ViewAtividadeController">
+    <children>
+        <HBox alignment="TOP_RIGHT" layoutX="768.0" layoutY="8.0" prefHeight="65.0" prefWidth="296.0" />
+        <AnchorPane layoutX="182.0" layoutY="131.0" prefHeight="550.0" prefWidth="700.0">
+            <children>
+                <Text layoutX="100.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atividade" wrappingWidth="322.3427734375">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <TextField layoutX="154.0" layoutY="87.0" maxWidth="1000.0" prefHeight="31.0" prefWidth="424.0" />
+                <TextField layoutX="154.0" layoutY="135.0" prefHeight="31.0" prefWidth="424.0" />
+                <TextField layoutX="154.0" layoutY="183.0" prefHeight="31.0" prefWidth="150.0" />
+                <TextField layoutX="193.0" layoutY="279.0" prefHeight="31.0" prefWidth="424.0" />
+                <Button layoutX="92.0" layoutY="346.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="150.0" text="Editar" />
+                <TextField layoutX="154.0" layoutY="231.0" prefHeight="31.0" prefWidth="150.0" />
+                <Label layoutX="100.0" layoutY="92.0" text="Data" />
+                <Label layoutX="100.0" layoutY="140.0" text="Local" />
+                <Label layoutX="100.0" layoutY="188.0" text="Inicio" />
+                <Label layoutX="100.0" layoutY="236.0" text="Fim" />
+                <Label layoutX="100.0" layoutY="284.0" text="Palestrante" />
+            </children>
+        </AnchorPane>
+          <Button layoutX="882.0" layoutY="131.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="150.0" text="Menu" />
+    </children>
+</AnchorPane>
