@@ -41,6 +41,7 @@ public class ViewLoginController {
                 System.in.read();
                 view.menu();
                 break;
+            case 6: view.logar(); break;
         }
     }
 }

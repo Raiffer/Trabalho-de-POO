@@ -15,7 +15,7 @@ public class ViewMenu {
 		this.email = email;
 		controller = new ViewMenuController();
 		controller.initViewMenuController(model, this);
-		controller.interacao(5);
+		controller.interacao(6);
 	}
 
 	public void menu() throws IOException {
@@ -34,7 +34,7 @@ public class ViewMenu {
 			case 3: controller.interacao(3); break;
 			case 4: controller.interacao(4); break;
 			case 5: controller.interacao(5); break;
-			default: controller.interacao(5);
+			default: controller.interacao(7);
 		}
 	}
 
@@ -84,5 +84,9 @@ public class ViewMenu {
 	}
 	public String getEmail() {
 		return email;
+	}
+
+	public void mensagem(String mensagem) {
+		System.out.println(mensagem);
 	}
 }

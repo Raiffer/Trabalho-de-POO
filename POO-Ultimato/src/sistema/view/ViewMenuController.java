@@ -29,6 +29,12 @@ public class ViewMenuController {
 			case 3: view.goCriarEvento(); break;
 			case 4: view.goEvento(view.getEvento()); break;
 			case 5: view.goLogin(model); break;
+			case 6: view.menu(); break;
+			case 7:
+				view.mensagem("Opcao Invalida! - Pressione Enter para continuar.");
+				System.in.read();
+				view.menu();
+				break;
 
 		}
 	}

@@ -42,7 +42,7 @@ public class ViewPerfil {
 		view.initiViewEditarPerfil(model, email);
 	}
 
-	public void goMenu() {
+	public void goMenu() throws IOException {
 		ViewMenu view = new ViewMenu();
 		view.initViewMenu(email, model);
 	}

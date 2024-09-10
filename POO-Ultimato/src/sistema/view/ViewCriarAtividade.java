@@ -39,7 +39,7 @@ public class ViewCriarAtividade {
 
 	public void goAtividade() {
 		ViewAtividade view = new ViewAtividade();
-		view.initViewAtividade(model, email);
+		view.initViewAtividade(model, email, nome);
 	}
 
 	public String getEmail() {

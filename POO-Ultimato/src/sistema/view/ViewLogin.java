@@ -29,7 +29,7 @@ public class ViewLogin {
 		escolha = sc.nextInt();
 		switch (escolha){
 			case 1:
-				controller.interacao(1);
+				controller.interacao(6);
 				break;
 			case 2:
 				controller.interacao(2);
@@ -66,11 +66,11 @@ public class ViewLogin {
 	}
 
 	public void mensagem(String mensagem) {
-		// So para que o codigo nao de erro, isso vai ser integrado ao JavaFX
 		System.out.println(mensagem);
 	}
 
 	public void goMenu(String email) throws IOException {
+		System.out.println("Bem Vindo ao SEGEA!");
 		ViewMenu viewMenu = new ViewMenu();
 		viewMenu.initViewMenu(this.email, this.model);
 	}
