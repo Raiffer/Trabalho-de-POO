@@ -86,9 +86,4 @@ public class ViewCadastro {
 		return telefone;
 	}
 
-	public void mensagem(String mensagem) {
-		// So para que o codigo nao de erro, isso vai ser integrado ao JavaFX
-		System.out.println(mensagem);
-	}
-
 }
