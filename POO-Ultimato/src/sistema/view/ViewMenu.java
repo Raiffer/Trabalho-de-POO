@@ -20,20 +20,20 @@ public class ViewMenu {
 
 	public void menu() throws IOException {
 		Scanner sc = new Scanner(System.in);
-		int escolha;
+		String escolha;
 		System.out.println("Menu Principal");
 		System.out.println("1 - Ver Lista de Eventos");
 		System.out.println("2 - Ver Perfil");
 		System.out.println("3 - Criar Evento");
 		System.out.println("4 - Pesquisar Evento");
 		System.out.println("5 - Desconectar");
-		escolha = sc.nextInt();
+		escolha = sc.nextLine();
 		switch (escolha) {
-			case 1: controller.interacao(1); break;
-			case 2: controller.interacao(2); break;
-			case 3: controller.interacao(3); break;
-			case 4: controller.interacao(4); break;
-			case 5: controller.interacao(5); break;
+			case "1": controller.interacao(1); break;
+			case "2": controller.interacao(2); break;
+			case "3": controller.interacao(3); break;
+			case "4": controller.interacao(4); break;
+			case "5": controller.interacao(5); break;
 			default: controller.interacao(8);
 		}
 	}
@@ -69,7 +69,7 @@ public class ViewMenu {
 		}
 	}
 
-	public void goEvento(String email) {
+	public void goEvento() throws IOException {
 		ViewEvento viewEvento = new ViewEvento();
 		viewEvento.initViewEvento(email, model, evento);
 	}
@@ -80,8 +80,8 @@ public class ViewMenu {
 	}
 
 	public void goCriarEvento() throws IOException {
-		ViewCriarEvento viewCriarEvento = new ViewCriarEvento();
-		viewCriarEvento.initViewCriarEvento(model, email);
+		ViewCriarEvent viewCriarEvento = new ViewCriarEvent();
+		viewCriarEvento.initViewCriarEvent(model, email);
 	}
 
 	public String getEvento(){

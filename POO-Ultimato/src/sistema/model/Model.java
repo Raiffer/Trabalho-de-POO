@@ -15,7 +15,7 @@ public class Model {
 				"27/09/2004","Flavinho do Pneu", 192520);
 		criarEvento("Sescomp", "UFC - Campus Russas", "11/11", "14/11", "bernardoraiffer@gmail.com");
 		entrarEvento("rianlucas@gmail.com", "Sescomp");
-		System.out.println(eventos.get("Sescomp").getParticipante("rianlucas@gmail.com"));
+		criarAtividade("Sala de Jogos", "11/11", "10","16","Sescomp");
 	}
 
 	public boolean criarUsuario(String email, String senha, String cep, String cpf, String dataNascimento, String nome,
@@ -86,6 +86,14 @@ public class Model {
 			event.put(entry.getKey(), entry.getValue().getNome());
 		}
 		return event;
+	}
+
+	public HashMap<String, String> mostrarAtividades(){
+		HashMap<String, String> atv = new HashMap<>();
+		for (Map.Entry<String, Atividade> entry : atividades.entrySet()) {
+			atv.put(entry.getKey(), entry.getValue().getNomeAtv());
+		}
+		return atv;
 	}
 
 	public void setTelefone(String email, int telefone) {
@@ -261,6 +269,7 @@ public class Model {
 			atividades.remove(nome);
 		}
 	}
+
 
 	public boolean verificarCPF(String cpf) {
 		// Verifica se o CPF tem 11 dígitos

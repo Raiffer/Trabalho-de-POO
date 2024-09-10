@@ -26,21 +26,21 @@ public class ViewEvento {
 		System.out.println("Evento: " + evento);
 		System.out.println("O que deseja fazer?");
 		System.out.println("1 - Pesquisar Atividade");
-		System.out.println("2 - Voltar para o Menu");
-		System.out.println("3 - Lista de Atividades");
+		System.out.println("2 - Lista de Atividades");
+		System.out.println("3 - Voltar para o Menu");
 		escolha = sc.nextInt();
 		switch (escolha){
 			case 1:
-				controller.interacao(2);
+				controller.interacao(3);
 				break;
 			case 2:
-				controller.interacao(3);
+				controller.interacao(7);
 				break;
 			case 3:
-				controller.interacao(3);
+				controller.interacao(6);
 				break;
 			default:
-				controller.interacao(5);
+				controller.interacao(8);
 				break;
 		}
 	}
@@ -51,7 +51,7 @@ public class ViewEvento {
 		System.out.println("Evento: " + evento);
 		System.out.println("O que deseja fazer?");
 		System.out.println("1 - Criar Atividade");
-		System.out.println("2 - Deletar Atividade");
+		System.out.println("2 - Deletar Evento");
 		System.out.println("3 - Lista de Atividades");
 		System.out.println("4 - Pesquisar Atividade");
 		System.out.println("5 - Voltar para o Menu");
@@ -61,16 +61,48 @@ public class ViewEvento {
 				controller.interacao(4);
 				break;
 			case 2:
-				controller.interacao(3);
+				controller.interacao(5);
 				break;
 			case 3:
+				controller.interacao(7);
+				break;
+			case 4:
 				controller.interacao(3);
 				break;
+			case 5:
+				controller.interacao(6);
+				break;
 			default:
-				controller.interacao(5);
+				controller.interacao(8);
 				break;
 		}
 	}
+
+	public void menu() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		int escolha;
+		System.out.println("Evento: " + evento);
+		System.out.println("O que deseja fazer?");
+		System.out.println("1 - Entrar no Evento");
+		System.out.println("2 - Listar Atividades");
+		System.out.println("3 - Voltar para o menu");
+		escolha = sc.nextInt();
+		switch (escolha){
+			case 1:
+				controller.interacao(2);
+				break;
+			case 2:
+				controller.interacao(7);
+				break;
+			case 3:
+				controller.interacao(6);
+				break;
+			default:
+				controller.interacao(8);
+				break;
+		}
+	}
+
 	public void criarAtividade() throws IOException {// Interaçao 1
 		controller.interacao(1);
 	}
@@ -95,6 +127,16 @@ public class ViewEvento {
 		System.out.println(mensagem);
 	}
 
+	public void pesquisarAtividade() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		int escolha;
+		System.out.println("Digite o nome da Atividade: ");
+		atividade = sc.nextLine();
+		if (model.verificarEvento(atividade)) {
+			controller.interacao(9);
+		}
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -112,7 +154,7 @@ public class ViewEvento {
 		view.initViewAtividade(model, email, atividade, evento);
 	}
 
-	public void goCriarAtividade() {
+	public void goCriarAtividade() throws IOException {
 		ViewCriarAtividade view = new ViewCriarAtividade();
 		view.initViewCriarAtividade(model, email, evento);
 	}

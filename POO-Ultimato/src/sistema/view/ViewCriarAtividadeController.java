@@ -2,6 +2,8 @@ package sistema.view;
 
 import sistema.model.Model;
 
+import java.io.IOException;
+
 public class ViewCriarAtividadeController {
     private ViewCriarAtividade view;
     private Model model;
@@ -12,7 +14,7 @@ public class ViewCriarAtividadeController {
         this.view = view;
     }
 
-    public void interacao(int caso){
+    public void interacao(int caso) throws IOException {
         switch (caso){
             case 1://criar nova atividade - danilo
                 model.criarAtividade(view.getNome(), view.getData(),  view.getHoraInicio(), view.getHoraFim(), view.getEvento());
