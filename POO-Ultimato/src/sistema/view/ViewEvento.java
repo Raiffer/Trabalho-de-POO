@@ -2,6 +2,8 @@ package sistema.view;
 
 import sistema.model.*;
 
+import java.io.IOException;
+
 public class ViewEvento {
 	private ViewEventoController controller;
 	private Model model;
@@ -15,23 +17,23 @@ public class ViewEvento {
 		controller.initViewEventoController(model, this);
 	}
 
-	public void criarAtividade() {// Interaçao 1
+	public void criarAtividade() throws IOException {// Interaçao 1
 		controller.interacao(1);
 	}
 
-	public void entrar() {// Interaçao 3
+	public void entrar() throws IOException {// Interaçao 3
 		controller.interacao(3);
 	}
 
-	public void detetar() {// Interaçao 4
+	public void detetar() throws IOException {// Interaçao 4
 		controller.interacao(4);
 	}
 
-	public void voltar() { // Interaçao 5
+	public void voltar() throws IOException { // Interaçao 5
 		controller.interacao(5);
 	}
 
-	public void atividade() { // Interaçao 6
+	public void atividade() throws IOException { // Interaçao 6
 		controller.interacao(6);
 	}
 
@@ -54,7 +56,7 @@ public class ViewEvento {
 
 	public void goAtividade() {
 		ViewAtividade view = new ViewAtividade();
-		view.initViewAtividade(model, email);
+		view.initViewAtividade(model, email, atividade);
 	}
 
 	public void goCriarAtividade() {
@@ -62,7 +64,7 @@ public class ViewEvento {
 		view.initViewCriarAtividade(model, email);
 	}
 
-	public void goMenu() {
+	public void goMenu() throws IOException {
 		ViewMenu viewMenu = new ViewMenu();
 		viewMenu.initViewMenu(this.email, this.model);
 	}

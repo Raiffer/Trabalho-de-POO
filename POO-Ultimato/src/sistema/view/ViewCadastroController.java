@@ -15,22 +15,25 @@ public class ViewCadastroController {
 
     public void interacao(int caso) throws IOException {
         switch(caso){
-            //necessario criar uma verificacao -->Rian ou Arthur ou Bernardo
             case 1:
                 if(model.criarUsuario(view.getEmail(), view.getSenha(), view.getCep(), view.getCpf(),view.getDataNascimento(), view.getNome(), view.getTelefone())){
-                    view.mensagem("cadastro feito");
+                    view.mensagem("Usuario Cadastrado com sucesso!");
                     view.goLogin();
                 }else{
-                    view.mensagem("credenciais invalidas");
+                    view.mensagem("Credenciais invalidas - Tente novamente!");
                     view.cadastrar();
                 }
-                //model.criarUsuario(view.getEmail(), view.getSenha(), view.getCep(), view.getCpf(),
-                        //view.getDataNascimento(), view.getNome(), view.getTelefone());
-
-                //Necessario fazer o metodo irLogin()
-                // goLogin é o metodo que instancia o objeto ViewLogin e inicia o metodo initViewLogin.
+                break;
             case 2:
                 view.goLogin();
+                break;
+            case 3: view.cadastrar(); break;
+            case 4: view.menu(); break;
+            case 5:
+                view.mensagem("Opcao Invalida! - Pressione Enter para continuar.");
+                System.in.read();
+                view.menu();
+                break;
         }
     }
 

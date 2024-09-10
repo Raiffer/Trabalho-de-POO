@@ -11,6 +11,7 @@ public class ViewNovaSenhaController {
     public void initViewNovaSenhaController(Model model, ViewNovaSenha view) {
         this.view = view;
         this.model = model;
+
     }
 
     public void interacao(int caso) throws IOException {
@@ -18,16 +19,21 @@ public class ViewNovaSenhaController {
             case 1:
                 if (view.getSenha1().equals(view.getSenha2())){
                     model.setSenha(view.getEmail(), view.getSenha1());
-                    //Fazer um metodo setSenha em model --> Danilo
-                    //setSenha recebe o email e a nova senha --> Danilo
+                    view.mensagem("Senha Alterada com sucesso!");
                     view.goLogin();
                 } else {
-                    view.mensagem("Nao deu");
+                    view.mensagem("Senhas Imcompativeis");
                     view.novaSenha();
                 }
-            case 2:
-                view.goLogin();
-
+                break;
+            case 2: view.goLogin();break;
+            case 3:
+                System.out.println("Opcao Invalida! - Pressione Enter para continuar.");
+                System.in.read();
+                view.menu();
+                break;
+            case 4: view.menu(); break;
+            case 5: view.novaSenha(); break;
         }
     }
 

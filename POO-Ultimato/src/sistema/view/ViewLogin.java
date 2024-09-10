@@ -14,7 +14,7 @@ public class ViewLogin {
 		this.model = model;
 		controller = new ViewLoginController();
 		controller.initViewLoginController(model, this);
-		menu();
+		controller.interacao(4);
 	}
 
 	public void menu() throws IOException {
@@ -29,17 +29,22 @@ public class ViewLogin {
 		escolha = sc.nextInt();
 		switch (escolha){
 			case 1:
-				logar();
+				controller.interacao(1);
 				break;
 			case 2:
-				cadastrar();
+				controller.interacao(2);
 				break;
 			case 3:
-				redefinirSenha();
+				controller.interacao(3);
 				break;
 			case 4:
 				System.exit(0);
+				break;
+			default:
+				controller.interacao(5);
+				break;
 		}
+		sc.close();
 
 	}
 	public void logar() throws IOException { // Interaçao 1
@@ -65,7 +70,7 @@ public class ViewLogin {
 		System.out.println(mensagem);
 	}
 
-	public void goMenu(String email) {
+	public void goMenu(String email) throws IOException {
 		ViewMenu viewMenu = new ViewMenu();
 		viewMenu.initViewMenu(this.email, this.model);
 	}

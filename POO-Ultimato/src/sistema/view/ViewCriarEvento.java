@@ -1,5 +1,6 @@
 package sistema.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import sistema.model.*;
@@ -9,7 +10,7 @@ public class ViewCriarEvento {
 	private Model model;
 	private String email, nome, local, dataInicio, dataFim;
 
-	public void initViewCriarEvento(Model model, String email) {
+	public void initViewCriarEvento(Model model, String email) throws IOException {
 		this.model = model;
 		this.email = email;
 		controller = new ViewCriarEventoController();
@@ -17,7 +18,7 @@ public class ViewCriarEvento {
 		criar();
 	}
 
-	public void criar() { // Interaçao 1
+	public void criar() throws IOException { // Interaçao 1
 		Scanner sc = new Scanner(System.in);
 		nome = sc.nextLine();
 		local = sc.nextLine();
@@ -27,7 +28,7 @@ public class ViewCriarEvento {
 		sc.close();
 	}
 
-	public void menu() { // Interaçao 2
+	public void menu() throws IOException { // Interaçao 2
 		controller.interacao(2);
 	}
 
@@ -36,7 +37,7 @@ public class ViewCriarEvento {
 		view.initViewEvento(email, model);
 	}
 
-	public void goMenu() {
+	public void goMenu() throws IOException {
 		ViewMenu view = new ViewMenu();
 		view.initViewMenu(email, model);
 	}

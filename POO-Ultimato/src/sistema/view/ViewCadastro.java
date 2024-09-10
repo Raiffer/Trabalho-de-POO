@@ -15,24 +15,42 @@ public class ViewCadastro {
 		this.model = model;
 		controller = new ViewCadastroController();
 		controller.initViewCadastroController(model, this);
-		cadastrar();
+		controller.interacao(4);
+	}
+
+	public void menu() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		int escolha;
+		System.out.println("Cadastrar Novo Usuario?");
+		System.out.println("1 - Cadastrar Usuario");
+		System.out.println("2 - Voltar");
+		escolha = sc.nextInt();
+		switch (escolha) {
+			case 1: controller.interacao(3); break;
+			case 2: controller.interacao(2); break;
+			default: controller.interacao(5); break;
+		}
+		sc.close();
 	}
 
 	public void cadastrar() throws IOException { // Interaçao 1
 		Scanner sc = new Scanner(System.in);
-		email = sc.nextLine();
-		senha = sc.nextLine();
-		cpf = sc.nextLine();
-		dataNascimento = sc.nextLine();
+		System.out.println("Digite seu nome: ");
 		nome = sc.nextLine();
+		System.out.println("Digite seu Email: ");
+		email = sc.nextLine();
+		System.out.println("Digite seu Senha: ");
+		senha = sc.nextLine();
+		System.out.println("Digite seu CPF: ");
+		cpf = sc.nextLine();
+		System.out.println("Digite sua Data de Nascimento: ");
+		dataNascimento = sc.nextLine();
+		System.out.println("Digite seu CEP: ");
 		cep = sc.nextLine();
-		// scan telefone;
+		System.out.println("Digite seu Telefone: ");
+		telefone = Integer.parseInt(sc.nextLine());
 		controller.interacao(1);
 		sc.close();
-	}
-
-	public void voltar() throws IOException {
-		controller.interacao(2); // Interaçao 2
 	}
 
 	public void goLogin() throws IOException {

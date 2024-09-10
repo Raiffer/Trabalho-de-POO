@@ -2,6 +2,8 @@ package sistema.view;
 
 import sistema.model.*;
 
+import java.io.IOException;
+
 public class ViewCriarEventoController {
     private ViewCriarEvento view;
     private Model model;
@@ -11,7 +13,7 @@ public class ViewCriarEventoController {
         this.view = view;
     }
 
-    public void interacao(int caso) {
+    public void interacao(int caso) throws IOException {
         switch (caso) {
             case 1:
                 if (model.verificarEvento(view.getNome(), view.getLocal(), view.getDataInicio(), view.getDataFim())) {

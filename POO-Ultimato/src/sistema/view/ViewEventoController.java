@@ -2,6 +2,8 @@ package sistema.view;
 
 import sistema.model.*;
 
+import java.io.IOException;
+
 public class ViewEventoController {
 	private ViewEvento view;
 	private Model model;
@@ -11,7 +13,7 @@ public class ViewEventoController {
 		this.model = model;
 	}
 
-	public void interacao(int caso) {
+	public void interacao(int caso) throws IOException {
 		switch (caso) {
 		case 1:
 			if (model.getUsuario(view.getEmail()) == model.getOrganizador(view.getEvento())) {

@@ -33,6 +33,14 @@ public class ViewLoginController {
             case 3:
                 view.goRedefinirSenha();
                 break;
+            case 4:
+                view.menu();
+                break;
+            case 5:
+                view.mensagem("Opcao Invalida! - Pressione Enter para continuar.");
+                System.in.read();
+                view.menu();
+                break;
         }
     }
 }

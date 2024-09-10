@@ -5,11 +5,12 @@ import sistema.model.*;
 public class ViewAtividade {
 	private Model model;
 	private ViewAtividadeController controller;
-	private String email;
+	private String email ,atividade;
 
-	public void initViewAtividade (Model model, String email) {// Inicia a instancia da Tela de Atividade.
+	public void initViewAtividade (Model model, String email,String atividade) {// Inicia a instancia da Tela de Atividade.
 		this.model = model;
 		this.email = email;
+		this.atividade = atividade;
 		controller = new ViewAtividadeController();
 		controller.initViewAtividadeController(model, this);
 	}
