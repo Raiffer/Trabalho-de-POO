@@ -18,13 +18,39 @@ public class ViewCriarEvento {
 		criar();
 	}
 
+	public void menu() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		int escolha;
+		System.out.println("Crie seu evento!");
+		System.out.println("O que deseja fazer?");
+		System.out.println("1 - Criar Evento");
+		System.out.println("2 - Voltar para o Menu");
+		escolha = sc.nextInt();
+		switch (escolha){
+			case 1:
+				controller.interacao(2);
+				break;
+			case 2:
+				controller.interacao(3);
+				break;
+			default:
+				controller.interacao(4);
+				break;
+		}{
+
+	}
+
 	public void criar() throws IOException { // Interaçao 1
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite o nome do evento:");
 		nome = sc.nextLine();
+		System.out.println("Digite o local do evento:");
 		local = sc.nextLine();
+		System.out.println("Digite a data de inicio :");
 		dataInicio = sc.nextLine();
+		System.out.println("Digite a data de encerramento:");
 		dataFim = sc.nextLine();
-		controller.interacao(1);
+		controller.interacao(5);
 		sc.close();
 	}
 
@@ -40,11 +66,6 @@ public class ViewCriarEvento {
 	public void goMenu() throws IOException {
 		ViewMenu view = new ViewMenu();
 		view.initViewMenu(email, model);
-	}
-
-	public void mensagem(String mensagem) {
-		// So para que o codigo nao de erro, isso vai ser integrado ao JavaFX
-		System.out.println(mensagem);
 	}
 
 	public String getEmail() {

@@ -17,34 +17,42 @@ public class ViewLogin {
 		controller.interacao(4);
 	}
 
-	public void menu() throws IOException {
-		Scanner sc = new Scanner(System.in);
-		int escolha;
-		System.out.println("Bem Vindo ao SEGEA!");
-		System.out.println("O que deseja fazer?");
-		System.out.println("1 - Logar Conta");
-		System.out.println("2 - Cadastrar Usuario");
-		System.out.println("3 - Esqueci Minha Senha");
-		System.out.println("4 - Sair");
-		escolha = sc.nextInt();
-		switch (escolha){
-			case 1:
-				controller.interacao(6);
-				break;
-			case 2:
-				controller.interacao(2);
-				break;
-			case 3:
-				controller.interacao(3);
-				break;
-			case 4:
-				System.exit(0);
-				break;
-			default:
-				controller.interacao(5);
-				break;
+	public void menu() throws IOException, EscolhaInvalidaException {
+		try {
+			Scanner sc = new Scanner(System.in);
+			int escolha;
+			System.out.println("Bem Vindo ao SEGEA!");
+			System.out.println("O que deseja fazer?");
+			System.out.println("1 - Logar Conta");
+			System.out.println("2 - Cadastrar Usuario");
+			System.out.println("3 - Esqueci Minha Senha");
+			System.out.println("4 - Sair");
+			if (escolha >= 1 && escolha <=4) {
+				escolha = sc.nextInt();
+				switch (escolha) {
+					case 1:
+						controller.interacao(6);
+						break;
+					case 2:
+						controller.interacao(2);
+						break;
+					case 3:
+						controller.interacao(3);
+						break;
+					case 4:
+						System.exit(0);
+						break;
+					default:
+						controller.interacao(5);
+						break;
+				}
+				sc.close();
+			} else {
+				throw new EscolhaInvalidaException();
+			}
+		} catch (EscolhaInvalidaException e) {
+			System.out.println(e.getMessage());
 		}
-		sc.close();
 	}
 
 	public void logar() throws IOException { // Interaçao 1
