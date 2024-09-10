@@ -34,7 +34,7 @@ public class ViewCriarEvento {
 
 	public void goEvento() {
 		ViewEvento view = new ViewEvento();
-		view.initViewEvento(email, model);
+		view.initViewEvento(email, model, nome);
 	}
 
 	public void goMenu() throws IOException {

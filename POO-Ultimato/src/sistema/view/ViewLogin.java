@@ -45,8 +45,8 @@ public class ViewLogin {
 				break;
 		}
 		sc.close();
-
 	}
+
 	public void logar() throws IOException { // Interaçao 1
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digite seu e-mail: ");

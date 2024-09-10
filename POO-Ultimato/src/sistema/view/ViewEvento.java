@@ -3,6 +3,7 @@ package sistema.view;
 import sistema.model.*;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ViewEvento {
 	private ViewEventoController controller;
@@ -10,13 +11,66 @@ public class ViewEvento {
 	private String email, evento, atividade;
 	// Nao sei ainda como definir o nome do evento, verificar JavaFX.
 
-	public void initViewEvento(String email, Model model) {
+	public void initViewEvento(String email, Model model, String evento) throws IOException {
 		this.model = model;
 		this.email = email;
+		this.evento = evento;
 		controller = new ViewEventoController();
 		controller.initViewEventoController(model, this);
+		controller.interacao(1);
 	}
 
+	public void menuPart() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		int escolha;
+		System.out.println("Evento: " + evento);
+		System.out.println("O que deseja fazer?");
+		System.out.println("1 - Pesquisar Atividade");
+		System.out.println("2 - Voltar para o Menu");
+		System.out.println("3 - Lista de Atividades");
+		escolha = sc.nextInt();
+		switch (escolha){
+			case 1:
+				controller.interacao(2);
+				break;
+			case 2:
+				controller.interacao(3);
+				break;
+			case 3:
+				controller.interacao(3);
+				break;
+			default:
+				controller.interacao(5);
+				break;
+		}
+	}
+
+	public void menuOrg() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		int escolha;
+		System.out.println("Evento: " + evento);
+		System.out.println("O que deseja fazer?");
+		System.out.println("1 - Criar Atividade");
+		System.out.println("2 - Deletar Atividade");
+		System.out.println("3 - Lista de Atividades");
+		System.out.println("4 - Pesquisar Atividade");
+		System.out.println("5 - Voltar para o Menu");
+		escolha = sc.nextInt();
+		switch (escolha){
+			case 1:
+				controller.interacao(4);
+				break;
+			case 2:
+				controller.interacao(3);
+				break;
+			case 3:
+				controller.interacao(3);
+				break;
+			default:
+				controller.interacao(5);
+				break;
+		}
+	}
 	public void criarAtividade() throws IOException {// Interaçao 1
 		controller.interacao(1);
 	}
@@ -38,7 +92,6 @@ public class ViewEvento {
 	}
 
 	public void mensagem(String mensagem) {
-		// So para que o codigo nao de erro, isso vai ser integrado ao JavaFX
 		System.out.println(mensagem);
 	}
 
@@ -56,12 +109,12 @@ public class ViewEvento {
 
 	public void goAtividade() {
 		ViewAtividade view = new ViewAtividade();
-		view.initViewAtividade(model, email, atividade);
+		view.initViewAtividade(model, email, atividade, evento);
 	}
 
 	public void goCriarAtividade() {
 		ViewCriarAtividade view = new ViewCriarAtividade();
-		view.initViewCriarAtividade(model, email);
+		view.initViewCriarAtividade(model, email, evento);
 	}
 
 	public void goMenu() throws IOException {

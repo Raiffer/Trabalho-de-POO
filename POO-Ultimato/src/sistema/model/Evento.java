@@ -38,6 +38,11 @@ public class Evento {
 		this.local = local;
 	}
 
+
+	public HashMap<String, Usuario> getParticipantes() {
+		return (HashMap<String, Usuario>) participantes;
+	}
+
 	public double getNotaMedia() {
 		return notaMedia;
 	}
@@ -50,6 +55,10 @@ public class Evento {
 
 	public Usuario getOrganizador() {
 		return organizador;
+	}
+
+	public String getParticipante(String email) {
+		return participantes.get(email).getNome();
 	}
 
 	private void calcularMedia() {

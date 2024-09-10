@@ -9,9 +9,10 @@ public class ViewCriarAtividade {
 	private Model model;
 	private String email, nome, data, horaInicio, horaFim, evento;
 
-	public void initViewCriarAtividade(Model model, String email) {
+	public void initViewCriarAtividade(Model model, String email, String evento) {
 		this.model = model;
 		this.email = email;
+		this.evento = evento;
 		controller = new ViewCriarAtividadeController();
 		controller.initViewCriarAtividadeController(model, this);
 		criar();
@@ -34,12 +35,12 @@ public class ViewCriarAtividade {
 
 	public void goEvento() {
 		ViewEvento view = new ViewEvento();
-		view.initViewEvento(email, model);
+		view.initViewEvento(email, model, evento);
 	}
 
 	public void goAtividade() {
 		ViewAtividade view = new ViewAtividade();
-		view.initViewAtividade(model, email, nome);
+		view.initViewAtividade(model, email, nome, evento);
 	}
 
 	public String getEmail() {

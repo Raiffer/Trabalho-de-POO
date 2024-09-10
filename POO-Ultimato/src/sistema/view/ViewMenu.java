@@ -34,7 +34,7 @@ public class ViewMenu {
 			case 3: controller.interacao(3); break;
 			case 4: controller.interacao(4); break;
 			case 5: controller.interacao(5); break;
-			default: controller.interacao(7);
+			default: controller.interacao(8);
 		}
 	}
 
@@ -59,12 +59,22 @@ public class ViewMenu {
 		controller.interacao(4);
 	}
 
-	public void goEvento(String email) {
-		ViewEvento viewEvento = new ViewEvento();
-		viewEvento.initViewEvento(email, model);
+	public void pesquisarEvento() throws IOException {
+		Scanner sc = new Scanner(System.in);
+		int escolha;
+		System.out.println("Digite o nome do evento: ");
+		evento = sc.nextLine();
+		if (model.verificarEvento(evento)){
+			controller.interacao(7);
+		}
 	}
 
-	public void goPerfil() {
+	public void goEvento(String email) {
+		ViewEvento viewEvento = new ViewEvento();
+		viewEvento.initViewEvento(email, model, evento);
+	}
+
+	public void goPerfil() throws IOException {
 		ViewPerfil viewPerfil = new ViewPerfil();
 		viewPerfil.initViewPerfil(model, email);
 	}

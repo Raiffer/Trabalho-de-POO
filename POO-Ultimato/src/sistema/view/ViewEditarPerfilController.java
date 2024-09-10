@@ -2,6 +2,8 @@ package sistema.view;
 
 import sistema.model.*;
 
+import java.io.IOException;
+
 public class ViewEditarPerfilController {
 	private ViewEditarPerfil view;
 	private Model model;
@@ -11,14 +13,37 @@ public class ViewEditarPerfilController {
 		this.model = model;
 	}
 	
-	public void interacao(int caso) {
+	public void interacao(int caso) throws IOException {
 		switch (caso) {
-		case 1: model.setEmail(view.getEmail(), view.getNewEmail());
-        case 2: model.setSenha(view.getEmail(),view.getSenha());
-        case 3: model.setNome(view.getEmail(), view.getNome());
-        case 4: model.setTelefone(view.getEmail(),view.getTelefone());
-        case 5: model.setCep(view.getEmail(), view.getCep());
-        case 6: view.goPerfil();
+			case 1: view.menu(); break;
+			case 2:
+				view.mudarEmail();
+				view.goPerfil();
+				break;
+			case 3:
+				view.mudarNome();
+				view.goPerfil();
+				break;
+			case 4:
+				view.mudarSenha();
+				view.goPerfil();
+				break;
+			case 5:
+				view.mudarCep();
+				view.goPerfil();
+				break;
+			case 6:
+				view.mudarTelefone();
+				view.goPerfil();
+				break;
+			case 7:
+				view.goPerfil();
+				break;
+			case 8:
+				view.mensagem("Opcao Invalida! - Pressione Enter para continuar.");
+				System.in.read();
+				view.menu();
+				break;
 		}
 	}
 }

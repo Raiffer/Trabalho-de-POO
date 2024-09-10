@@ -16,33 +16,26 @@ public class ViewEventoController {
 	public void interacao(int caso) throws IOException {
 		switch (caso) {
 		case 1:
-			if (model.getUsuario(view.getEmail()) == model.getOrganizador(view.getEvento())) {
-				view.goCriarAtividade();
-			} else {
-				view.mensagem("Apenas Organizadores podem criar Atividades");
+			if (view.getEmail().equals(model.getOrganizador(view.getEvento()))) {
+				view.menuOrg();
+			}else if (model.verificarParticipante(view.getEmail(),view.getEvento())) {
+				view.menuPart();
+			}else {
+				view.menu();
 			}
-			
-		//case 2:
-			//if (model.getUsuario(view.getEmail()) == model.getOrganizador(view.getEvento())) {
-				//view.goEditarEvento(view.getEmail());
-			//} else {
-				//view.mensagem("Apenas Organizadores podem editar o evento");
-			//}
-				//Ainda a decidir como faremos editar usuario.
-
+			break;
+		case 2:
+			model.entrarEvento(view.getEmail(),view.getEvento());
+			view.menuPart();
+			break;
 		case 3:
-			model.entrarEvento(view.getEmail(), view.getEvento());
-
+			view.pesquisarAtividade();
+			break;
 		case 4:
-			model.removerEvento(view.getEvento());
-			view.goMenu();
-			
+			view.goCriarAtividade();
+			break;
 		case 5:
-			view.goMenu();
-			
-		case 6:
-			view.goAtividade();
-			
+			model.removerAtividade(view.getEmail());
 		}
 	}
 }
